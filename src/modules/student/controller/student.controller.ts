@@ -1,13 +1,18 @@
-import { Controller, Get, Post } from '@nestjs/common';
-import { ICreateStudentDto } from '../dto/create-student.dto';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
+import { CreateStudentDto } from '../dto/create-student.dto';
 import { Student } from '../model/student.entity';
 import { StudentService } from '../service/student.service';
 
+@ApiTags('student')
 @Controller('students')
 export class StudentController {
   constructor(private readonly studentService: StudentService) {}
+
   @Post()
-  async createStudent(createOrderDto: ICreateStudentDto): Promise<Student> {
+  async createStudent(
+    @Body() createOrderDto: CreateStudentDto,
+  ): Promise<Student> {
     return this.studentService.createStudent(createOrderDto);
   }
   @Get()

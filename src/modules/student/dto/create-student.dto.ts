@@ -1,7 +1,3 @@
-export interface ICreateStudentDto {
-  id: number;
-  name: string;
-  email: string;
-  address: string;
-  phone: string;
-}
+import { Student } from '../model/student.entity';
+
+export class CreateStudentDto extends Student {}
