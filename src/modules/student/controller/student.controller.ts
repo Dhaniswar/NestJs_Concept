@@ -9,10 +9,9 @@ import {
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { DeleteResult, UpdateResult } from 'typeorm';
-import { UpdateStudentDto } from '../dto';
-import { CreateStudentDto } from '../dto/create-student.dto';
-import { Student } from '../model/student.entity';
-import { StudentService } from '../service/student.service';
+import { CreateStudentDto, UpdateStudentDto } from '../dto';
+import { Student } from '../model';
+import { StudentService } from '../service';
 
 @ApiTags('student')
 @Controller('students')
