@@ -16,7 +16,7 @@ export class StudentController {
     return this.studentService.createStudent(createOrderDto);
   }
   @Get()
-  async getStudentList(): Promise<any> {
+  async getStudentList(): Promise<Student[]> {
     return this.studentService.studentList();
   }
 }

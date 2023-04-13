@@ -13,7 +13,7 @@ export class StudentService {
   async createStudent(input: CreateStudentDto): Promise<Student> {
     return this.studentRepository.save(input);
   }
-  async studentList(): Promise<any> {
-    return 'Student List';
+  async studentList(): Promise<Student[]> {
+    return await this.studentRepository.find();
   }
 }

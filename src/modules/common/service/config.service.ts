@@ -42,5 +42,11 @@ export const config = (): IConfig => {
       synchronize: env.TYPEORM_SYNCHRONIZE === 'true',
       migrationsAutoRun: env.TYPEORM_MIGRATIONS_AUTO_RUN === 'true',
     },
+
+    firebase: {
+      projectId: env.FIREBASE_PROJECT_ID!,
+      clientEmail: env.FIREBASE_CLIENT_EMAIL!,
+      privateKey: env.FIREBASE_PRIVATE_KEY!,
+    },
   };
 };

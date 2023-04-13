@@ -15,4 +15,10 @@ export interface IConfig {
     readonly synchronize: boolean;
     readonly migrationsAutoRun: boolean;
   };
+
+  readonly firebase: {
+    projectId: string;
+    clientEmail: string;
+    privateKey: string;
+  };
 }
