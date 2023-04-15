@@ -21,4 +21,11 @@ export interface IConfig {
     clientEmail: string;
     privateKey: string;
   };
+
+  readonly sendgrid: {
+    senderEmail: string;
+    user: string;
+    apiKey: string;
+    host: string;
+  };
 }

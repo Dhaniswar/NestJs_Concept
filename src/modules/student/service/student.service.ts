@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { MailService } from 'src/modules/send_email_sendgrid/service';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import { UpdateStudentDto } from '../dto';
 import { CreateStudentDto } from '../dto/create-student.dto';
@@ -10,9 +11,11 @@ export class StudentService {
   public constructor(
     @InjectRepository(Student)
     private readonly studentRepository: Repository<Student>,
+    private readonly mailService: MailService,
   ) {}
 
   async createStudent(input: CreateStudentDto): Promise<Student> {
+    this.mailService.plainTextMail(input.email, input.address, input.name);
     return this.studentRepository.save(input);
   }
 

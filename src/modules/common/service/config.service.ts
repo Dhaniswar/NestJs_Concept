@@ -48,5 +48,12 @@ export const config = (): IConfig => {
       clientEmail: env.FIREBASE_CLIENT_EMAIL!,
       privateKey: env.FIREBASE_PRIVATE_KEY!,
     },
+
+    sendgrid: {
+      senderEmail: env.SENDGRID_SENDER_EMAIL!,
+      user: env.SENDGRID_USER!,
+      apiKey: env.SENDGRID_API_KEY!,
+      host: env.SENDGRID_HOST!,
+    },
   };
 };
