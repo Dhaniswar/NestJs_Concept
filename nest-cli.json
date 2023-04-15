@@ -3,6 +3,8 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",
   "compilerOptions": {
+    "assets": ["modules/send_email_sendgrid/**/*"],
+    "watchAssets": true,
     "deleteOutDir": true
   }
 }

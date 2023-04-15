@@ -5,6 +5,7 @@ import { config } from './common/service/config.service';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 import { IConfig } from './common/interfaces/config.interface';
 import { StudentModule } from './student/student.module';
+import { MailModule } from './send_email_sendgrid/send-email-sendgrid.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { StudentModule } from './student/student.module';
       },
     }),
     StudentModule,
+    MailModule,
   ],
   controllers: [],
   providers: [],
