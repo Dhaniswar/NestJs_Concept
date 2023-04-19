@@ -6,6 +6,8 @@ import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConne
 import { IConfig } from './common/interfaces/config.interface';
 import { StudentModule } from './student/student.module';
 import { MailModule } from './send_email_sendgrid/send-email-sendgrid.module';
+import { UserModule } from './user/user.module';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 @Module({
   imports: [
@@ -35,8 +37,10 @@ import { MailModule } from './send_email_sendgrid/send-email-sendgrid.module';
         } as PostgresConnectionOptions;
       },
     }),
+    UserModule,
     StudentModule,
     MailModule,
+    AuthenticationModule,
   ],
   controllers: [],
   providers: [],
